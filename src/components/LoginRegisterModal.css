@@ -1,0 +1,184 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  backdrop-filter: blur(8px); /* subtle blur for frosted glass effect */
+}
+
+.modal-content {
+  background: #ececec;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  padding: 3rem 2.5rem 2.5rem;
+  position: relative;
+  box-shadow: 0 8px 36px rgba(47, 47, 48, 0.2), 0 0 10px rgba(60, 59, 63, 0.1);
+  box-sizing: border-box;
+  border: 1.5px solid #000000;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.modal-content {
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+.modal-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(56, 55, 59, 0.35),
+    0 0 18px rgba(123, 95, 255, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3a3063; /* deep indigo */
+  transition: color 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+.modal-close:hover {
+  color: #7b5fff; /* vibrant purple */
+}
+
+.modal-content h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #4b4b4b; /* deep indigo */
+  letter-spacing: 0.04em;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: #4a4a66; /* muted deep indigo */
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: 1.5rem;
+  border: 2px solid #d2d6dc; /* lighter silver */
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3063;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #eaeaf7; /* very pale lavender */
+  box-sizing: border-box;
+}
+
+form input::placeholder {
+  color: #9ba4b5; /* soft silver-gray */
+  font-style: italic;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #7b5fff; /* vibrant purple */
+  box-shadow: 0 0 10px rgba(123, 95, 255, 0.4);
+  background-color: #fff; /* white background on focus */
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.forgot-password button {
+  font-size: 0.9rem;
+  color: #7b5fff; /* vibrant purple */
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.forgot-password button:hover {
+  color: #3a3063; /* deep indigo */
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #757b88 100%);
+  border: none;
+  color: white;
+  padding: 16px 0;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 16px rgba(123, 95, 255, 0.6);
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #5a3dbf 0%);
+  box-shadow: 0 8px 22px rgba(90, 61, 191, 0.75);
+}
+
+.switch-form {
+  text-align: center;
+  font-size: 1rem;
+  color: #6c6c8a;
+  user-select: none;
+  margin-top: 1.8rem;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: #7b5fff; /* vibrant purple */
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 8px;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+.switch-btn:hover {
+  color: #3a3063; /* deep indigo */
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 2rem 1.8rem 1.8rem;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .submit-btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+}

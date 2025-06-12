@@ -1,0 +1,151 @@
+/* StorePage.css */
+
+.store-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f2f2f2; /* light silver background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e2e2e;
+}
+
+.toast {
+  background-color: #6a0dad; /* deep purple */
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.category-section {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #444444;
+  border-left: 4px solid #a77bd4;
+  padding-left: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.1); /* purple shadow */
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(106, 13, 173, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #2e2e2e;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #6a0dad;
+  margin-bottom: 0.5rem;
+}
+
+.stock-status {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.stock-status.in-stock {
+  color: #6a0dad;
+}
+
+.stock-status.limited-stock {
+  color: #a77bd4;
+}
+
+.stock-status.out-of-stock {
+  color: #af1313;
+  text-decoration: line-through;
+}
+
+.wishlist-button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #c0c0c0;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.wishlist-button.active {
+  color: #d31b1b;
+}
+
+.add-to-cart-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background-color: #a77bd4;
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.average-rating {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  color: #ffd700; /* gold stars */
+  letter-spacing: 2px;
+}

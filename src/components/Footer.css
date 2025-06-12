@@ -1,0 +1,91 @@
+/* Footer.css */
+
+.footer {
+  background-color: #34273d; /* Deep purple background */
+  color: #c0c0c0; /* Silver text */
+  padding: 30px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.payment-icons img {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1); /* White logos for contrast */
+  transition: filter 0.3s ease;
+}
+
+.payment-icons img:hover {
+  filter: brightness(0.7) invert(1); /* Slightly dim on hover */
+  cursor: pointer;
+}
+
+.footer-credits,
+.footer-link-to-original,
+.footer-copy {
+  margin: 12px 0;
+  color: #c0c0c0; /* Silver color */
+}
+
+.footer-credits a,
+.footer-link-to-original a {
+  color: #d8bfd8; /* Thistle (light purple) for links */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-credits a:hover,
+.footer-link-to-original a:hover {
+  color: #9370db; /* Medium purple on hover */
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-link {
+  font-size: 24px;
+  margin: 0 12px;
+  color: #d8bfd8; /* Light purple */
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: #9370db; /* Medium purple on hover */
+  transform: scale(1.2);
+  outline: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .payment-icons {
+    gap: 10px;
+  }
+
+  .payment-icons img {
+    height: 24px;
+  }
+
+  .social-link {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+}

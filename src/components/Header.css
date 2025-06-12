@@ -1,0 +1,141 @@
+/* Header container */
+.header {
+  background-color: #ececec;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar wrapper with centered content and max-width */
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+/* Logo styling */
+.logo {
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  color: #464646;
+  font-size: 44px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual nav links */
+.nav-links li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(85, 85, 85);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #007bff; /* example hover color */
+}
+
+/* Icon buttons */
+.icon-btn {
+  font-size: 2rem; /* 20px equivalent */
+  color: #000000 !important;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.icon-btn:hover {
+  color: #7b5fff !important; /* Your brand accent color */
+}
+
+/* Optional nav-icon class you had */
+.nav-icon {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.nav-icon:hover {
+  color: #007bff;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-btn {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -35px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.nav-icon:hover .tooltip {
+  opacity: 1;
+}
+.product-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
