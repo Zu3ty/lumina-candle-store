@@ -1,184 +1,237 @@
+/* =========================
+   MODAL OVERLAY & CONTAINER
+   ========================= */
+
+/* Full-screen dark overlay with blur effect */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(61, 61, 61, 0.6); /* Semi-transparent dark background */
+  backdrop-filter: blur(6px); /* Blur effect behind modal */
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 1rem;
-  backdrop-filter: blur(8px); /* subtle blur for frosted glass effect */
+  align-items: center;
+  z-index: 9999; /* Ensure it's above everything */
 }
 
+/* Modal content box styling */
 .modal-content {
-  background: #ececec;
+  background: #ececec; /* Light grey background */
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
   width: 100%;
   max-width: 420px;
-  border-radius: 14px;
-  padding: 3rem 2.5rem 2.5rem;
+  box-shadow: 0 8px 24px rgba(75, 0, 130, 0.3); /* Indigo glow */
   position: relative;
-  box-shadow: 0 8px 36px rgba(47, 47, 48, 0.2), 0 0 10px rgba(60, 59, 63, 0.1);
-  box-sizing: border-box;
-  border: 1.5px solid #000000;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.modal-content {
-  background-color: #ffffff !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  opacity: 1 !important;
 }
 
-.modal-content:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(56, 55, 59, 0.35),
-    0 0 18px rgba(123, 95, 255, 0.2);
-}
+/* =========================
+   CLOSE BUTTON
+   ========================= */
 
+/* X button to close modal */
 .modal-close {
   position: absolute;
-  top: 16px;
-  right: 18px;
-  font-size: 1.8rem;
+  top: 12px;
+  right: 16px;
   background: transparent;
   border: none;
-  cursor: pointer;
-  color: #3a3063; /* deep indigo */
-  transition: color 0.2s ease;
-  padding: 0;
-  line-height: 1;
-}
-.modal-close:hover {
-  color: #7b5fff; /* vibrant purple */
-}
-
-.modal-content h2 {
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: 800;
   font-size: 1.8rem;
-  color: #4b4b4b; /* deep indigo */
-  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: #4b0082;
+  transition: color 0.2s ease;
 }
 
-form label {
-  display: block;
-  margin-bottom: 0.6rem;
+.modal-close:hover {
+  color: #7b4bff;
+}
+
+/* =========================
+   TEXT & HEADINGS
+   ========================= */
+
+/* Modal title */
+h2 {
+  margin-bottom: 1.6rem;
+  text-align: center;
   font-weight: 600;
-  color: #4a4a66; /* muted deep indigo */
-  font-size: 1rem;
-  letter-spacing: 0.01em;
+  color: #080808;
 }
 
-form input {
-  width: 100%;
-  padding: 12px 16px;
-  margin-top: 6px;
-  margin-bottom: 1.5rem;
-  border: 2px solid #d2d6dc; /* lighter silver */
-  border-radius: 10px;
-  font-size: 1.05rem;
+/* =========================
+   FORM ELEMENTS
+   ========================= */
+
+/* Overall form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+/* Label and input layout */
+label {
   font-weight: 500;
-  color: #3a3063;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #eaeaf7; /* very pale lavender */
-  box-sizing: border-box;
+  color: #555555;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  gap: 0.25rem;
 }
 
-form input::placeholder {
-  color: #9ba4b5; /* soft silver-gray */
-  font-style: italic;
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid #aaaabb;
+  background: #fafafa;
+  transition: border-color 0.3s ease;
+  color: #333;
 }
 
-form input:focus {
+/* Input focus styling */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
   outline: none;
-  border-color: #7b5fff; /* vibrant purple */
-  box-shadow: 0 0 10px rgba(123, 95, 255, 0.4);
-  background-color: #fff; /* white background on focus */
+  border-color: #7b4bff;
+  box-shadow: 0 0 5px rgba(123, 75, 255, 0.5);
 }
 
-.forgot-password {
-  text-align: right;
-  margin-bottom: 1.5rem;
+/* =========================
+   PASSWORD VISIBILITY TOGGLE
+   ========================= */
+
+/* Container to hold password + eye icon */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.forgot-password button {
+/* Make room for eye icon */
+.password-wrapper input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+/* Eye icon for toggle */
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #000000;
+  font-size: 1.5rem;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.eye-icon:hover {
+  color: #4b0082;
+}
+
+/* =========================
+   REMEMBER ME CHECKBOX
+   ========================= */
+
+/* Checkbox layout */
+.remember-me {
+  display: flex;
+  align-items: center;
   font-size: 0.9rem;
-  color: #7b5fff; /* vibrant purple */
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-  font-weight: 700;
-  transition: color 0.3s ease;
-}
-.forgot-password button:hover {
-  color: #3a3063; /* deep indigo */
+  color: #292929;
+  gap: 8px;
+  margin-top: 4px;
 }
 
-.submit-btn {
-  width: 100%;
-  background: linear-gradient(135deg, #757b88 100%);
-  border: none;
-  color: white;
-  padding: 16px 0;
-  font-weight: 800;
-  border-radius: 12px;
+/* Custom checkbox appearance */
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
   cursor: pointer;
-  font-size: 1.2rem;
-  box-shadow: 0 6px 16px rgba(123, 95, 255, 0.6);
-  transition: background 0.35s ease, box-shadow 0.35s ease;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  accent-color: #7b4bff;
+}
+
+/* =========================
+   ERROR MESSAGES
+   ========================= */
+
+/* Error text under input */
+.error {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+/* Submit button */
+.submit-btn {
+  margin-top: 1.8rem;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #24172e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #5a3dbf 0%);
-  box-shadow: 0 8px 22px rgba(90, 61, 191, 0.75);
+  background-color: #3b2050;
 }
 
+/* Switch between login/register */
 .switch-form {
+  margin-top: 1.4rem;
   text-align: center;
-  font-size: 1rem;
-  color: #6c6c8a;
-  user-select: none;
-  margin-top: 1.8rem;
+  font-size: 0.95rem;
+  color: #555555;
 }
 
+/* Button to switch form type */
 .switch-btn {
   background: none;
   border: none;
-  color: #7b5fff; /* vibrant purple */
-  font-weight: 700;
+  color: #7b4bff;
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-  margin-left: 8px;
-  font-size: 1.05rem;
-  transition: color 0.3s ease;
-}
-.switch-btn:hover {
-  color: #3a3063; /* deep indigo */
+  padding: 0 6px;
+  transition: color 0.25s ease;
 }
 
-/* Responsive tweaks */
+.switch-btn:hover {
+  color: #4b0082;
+}
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
 @media (max-width: 480px) {
   .modal-content {
-    padding: 2rem 1.8rem 1.8rem;
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  .modal-content h2 {
-    font-size: 1.5rem;
+    padding: 1.5rem;
+    max-width: 90%;
   }
 
   .submit-btn {
-    font-size: 1.1rem;
-    padding: 14px 0;
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.95rem;
   }
 }

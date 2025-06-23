@@ -1,93 +1,145 @@
 import React from "react";
+import { FaInstagram, FaFacebookF, FaTiktok, FaGithub } from "react-icons/fa";
 import "./Footer.css";
 
+/**
+ * Footer component for Lumina store.
+ * This component displays:
+ * - Brand information and description
+ * - Quick navigation links (Home, Shop, Contact)
+ * - Newsletter subscription form
+ * - Social media icons for Instagram, Facebook, and TikTok
+ * - Bottom copyright and developer credit with GitHub link
+ */
 const Footer = () => {
   return (
+    // Semantic footer tag for accessibility
     <footer className="footer">
-      <div className="footer-content">
-        {/* Payment Method Icons */}
-        <div className="footer-payments">
-          <div className="payment-icons">
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/visa.svg-af3e99c35d73e394b54d.svg"
-              alt="Visa"
-              loading="lazy"
+      {/* Container wraps all footer content for layout */}
+      <div className="footer-container">
+        {/* Brand Info Section */}
+        <div className="footer-section brand">
+          {/* Brand name/title */}
+          <h4 className="brand-name">Lumina</h4>
+          {/* Short descriptive paragraph about the brand */}
+          <p className="brand-description">
+            Where elegance meets aroma. Handcrafted candles made to calm,
+            captivate, and create mood.
+          </p>
+        </div>
+
+        {/* Quick Navigation Links Section */}
+        <div className="footer-section links">
+          {/* Section heading */}
+          <h5>Quick Links</h5>
+          {/* List of navigation links */}
+          <ul>
+            {/* Home link */}
+            <li>
+              <a href="/" className="footer-link">
+                Home
+              </a>
+            </li>
+            {/* Shop link */}
+            <li>
+              <a href="/store" className="footer-link">
+                Shop
+              </a>
+            </li>
+            {/* Contact link */}
+            <li>
+              <a href="/contact" className="footer-link">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Newsletter Subscription and Social Media Section */}
+        <div className="footer-section newsletter">
+          {/* Section heading */}
+          <h5>Stay in Touch</h5>
+          {/* Short call to action */}
+          <p>Be the first to know about new collections and special offers.</p>
+
+          {/* Newsletter subscription form */}
+          <form
+            className="newsletter-form"
+            onSubmit={(e) => e.preventDefault()} // Prevents actual form submission
+            aria-label="Subscribe to newsletter"
+          >
+            {/* Email input field */}
+            <input
+              type="email"
+              placeholder="Your email"
+              className="newsletter-input"
+              required
+              aria-required="true"
             />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/mastercard.svg-23a3ce15866685c8506f.svg"
-              alt="Mastercard"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/american-express.svg-c015bac32018ca240301.svg"
-              alt="American Express"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/diners-club-international.svg-1fbac96b68e4b755fc49.svg"
-              alt="Diners Club International"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/payfast.svg-d10895e3af0dedb31817.svg"
-              alt="PayFast"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/ebucks.svg-56934a5cf17963365d09.svg"
-              alt="eBucks"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/mobicred.svg-bda9a4b182e4dd57d514.svg"
-              alt="Mobicred"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/Discovery-Miles-web-icon.png-96dc92f96edcb8d82f52.png"
-              alt="Discovery Miles"
-              loading="lazy"
-            />
-            <img
-              src="https://www.takealot.com/b245eaf03bdcf749830177d9d525bfaf08b264f9/static/media/src/images/payment-providers/payflex.svg-8961bc011a0bea670239.svg"
-              alt="Payflex"
-              loading="lazy"
-            />
+            {/* Submit button */}
+            <button type="submit" className="btn-subscribe">
+              Subscribe
+            </button>
+          </form>
+
+          {/* Social media icons container */}
+          <div className="social-icons" role="list">
+            {/* Instagram icon with accessible label */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="social-link"
+              role="listitem"
+            >
+              <FaInstagram />
+            </a>
+            {/* Facebook icon with accessible label */}
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="social-link"
+              role="listitem"
+            >
+              <FaFacebookF />
+            </a>
+            {/* TikTok icon with accessible label */}
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="social-link"
+              role="listitem"
+            >
+              <FaTiktok />
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* Website Credits */}
-        <div className="footer-credits">
-          <p>
-            Website by{" "}
-            <a
-              href="https://github.com/Zu3ty"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Chante' Schnetler
-            </a>
-          </p>
-        </div>
+      {/* Bottom footer bar for copyright and credits */}
+      <div className="footer-bottom">
+        {/* Copyright notice */}
+        <p>© 2025 Lumina. All rights reserved.</p>
 
-        {/* Link to Original Site */}
-        <div className="footer-link-to-original">
-          <p>
-            Visit the original website:{" "}
-            <a
-              href="https://www.takealot.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Takealot
-            </a>
-          </p>
-        </div>
+        {/* Developer credit */}
+        <p>Developed by Chante Schnetler</p>
 
-        {/* Copyright */}
-        <div className="footer-copy">
-          <p>&copy; 2025 Lumina Candles. All rights reserved.</p>
-        </div>
+        {/* GitHub link with icon */}
+        <a
+          href="https://github.com/Zu3ty"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+          className="github-link"
+        >
+          <FaGithub />
+          <span>GitHub</span>
+        </a>
       </div>
     </footer>
   );

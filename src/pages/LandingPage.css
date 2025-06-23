@@ -1,58 +1,339 @@
-.categories-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.categories-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #4b4b4b;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
+/* === General Page Styles === */
+.landing {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
-.category-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* === Carousel Section === */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  max-width: 2000px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* Carousel Navigation Buttons */
+.scroll-btn {
+  border: none;
+  background-color: #ffffffcc; /* Slightly transparent white */
+  color: #6c3483; /* Soft purple */
+  font-size: 1.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  background-color: #2c2c2c;
+  color: white;
+  transform: scale(1.1);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* === Product Card === */
+.landing-product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 450px;
+  height: 650px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.landing-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.landing-product-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  height: 480px;
+}
+
+.landing-product-card h4 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.landing-product-card p {
+  font-weight: bold;
+  color: #444;
+}
+
+/* === Add to Cart Button === */
+.landing-buy-btn {
+  background-color: #cc2e70;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+/* === Wishlist Heart Button === */
+.landing-wishlist-heart {
+  position: absolute;
+  top: 590px;
+  right: 300px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #505050;
+  transition: color 0.3s;
+}
+
+.landing-wishlist-heart.active {
+  color: #e74c3c;
+}
+
+/* === "New" Product Label === */
+.landing-new-label {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background-color: #252525;
+  color: white;
+  padding: 0.6rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* === About Section === */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  background-color: #f4f1f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* About Text Column */
+.about-text {
+  flex: 1 1 400px;
+  color: #2f2f2f;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding-right: 1.5rem;
+}
+
+.about-text h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #3f1a80;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* === Slideshow in About Section === */
+.fade-slideshow {
+  flex: 1 1 400px;
+  position: relative;
+  height: 550px;
   overflow: hidden;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fade-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.fade-image.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* === Newsletter Section === */
+.newsletter-section {
+  /* Make section full width across all screen sizes */
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background: url("../assets/newsletter.jpg") center center / cover no-repeat;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #faf8f3;
+  margin-top: 60px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Overlay on newsletter background */
+.newsletter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 235, 235, 0.7); /* subtle overlay */
+  z-index: 0;
+}
+
+/* Container for newsletter content */
+.newsletter-box {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  max-width: 1500px;
+  background-color: rgba(250, 248, 243, 0.85);
+  border: 2px solid #2b2b2b;
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(8px);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+/* Newsletter Left Column (Text & Perks) */
+.newsletter-left {
+  flex: 1;
+  min-width: 260px;
+}
+
+.newsletter-left h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #474747;
+  letter-spacing: 1px;
+  font-family: "Georgia", serif;
+}
+
+.newsletter-left h4 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #54533b;
+  font-family: "Georgia", serif;
+}
+
+/* Newsletter Perks List */
+.newsletter-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #3b3a2e;
+}
+
+.newsletter-perks li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.perk-icon {
+  color: #a8a8a8;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Newsletter Right Column (Form) */
+.newsletter-form {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  gap: 15px;
+  flex: 1;
+  min-width: 260px;
 }
 
-.category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
-}
-
-.category-image {
-  height: 180px;
-  background-position: center;
-  background-size: cover;
-  border-bottom: 1px solid #eee;
-}
-
-.category-info {
-  padding: 20px;
-  flex-grow: 1;
-}
-
-.category-info h3 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-}
-
-.category-info p {
+.newsletter-form input {
+  padding: 12px 16px;
+  border: 1.5px solid #222222;
+  border-radius: 8px;
   font-size: 1rem;
-  color: #666;
+  background-color: #faf8f3;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+.newsletter-form button {
+  padding: 14px;
+  background-color: #7d62a7;
+  color: #faf8f3;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s ease;
 }

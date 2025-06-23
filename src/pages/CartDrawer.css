@@ -1,0 +1,191 @@
+/* === Base Styles for Offcanvas Sidebar === */
+.offcanvas {
+  width: 500px !important; /* Set fixed width for sidebar */
+  border-left: 1px solid #ccc; /* Light border on left edge */
+  background-color: #f3f3f6 !important; /* Light grey background */
+  transition: transform 0.3s ease-in-out; /* Smooth slide-in transition */
+  z-index: 1050; /* Ensure it's above other elements */
+}
+
+.offcanvas.show {
+  transform: translateX(0); /* Slide into view */
+}
+
+/* === Offcanvas Header === */
+.offcanvas-header {
+  background-color: #e6e1f0; /* Soft lavender-grey background */
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 1.25rem;
+}
+
+.offcanvas-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4a4a4a;
+}
+
+.btn-close {
+  background: transparent;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+/* === Offcanvas Body === */
+.offcanvas-body {
+  padding: 1rem;
+  max-height: calc(100vh - 60px); /* Prevent overflow beyond screen height */
+  overflow-y: auto; /* Scroll content if too tall */
+}
+
+/* === Empty Cart Button === */
+.shop.btn {
+  background-color: #6a4ba7 !important; /* Deep purple */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.shop.btn:hover {
+  background-color: #543c8f;
+}
+
+/* === Cart Item Styles === */
+.list-group-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(106, 75, 167, 0.05); /* Subtle purple shadow */
+}
+
+.list-group-item h6 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.list-group-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.img-thumbnail {
+  border: none;
+  border-radius: 8px;
+}
+
+/* === Wishlist Heart Button === */
+.wishlist-button {
+  background-color: #f1ecf9; /* Soft purple background */
+  border: 1px solid #d8c9ef;
+  border-radius: 50%; /* Circle shape */
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a4ba7; /* Main purple icon */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.wishlist-button:hover {
+  background-color: #e2d6f3;
+  border-color: #c8aef0;
+  color: #543c8f;
+  box-shadow: 0 4px 8px rgba(106, 75, 167, 0.15); /* Add hover glow */
+}
+
+/* === Optional Tooltip on Wishlist Hover === */
+.wishlist-button::after {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 2rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.wishlist-button:hover::after {
+  background-color: #2a125e; /* Dark purple tooltip */
+}
+
+/* === Remove Item Button === */
+.remove-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+/* === Quantity Input Field === */
+input[type="number"] {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.5rem;
+}
+
+/* === Checkout Button === */
+.btn-success {
+  background-color: #6a4ba7 !important;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.btn-success:hover {
+  background-color: #543c8f !important;
+}
+
+/* === Custom Dropdown Styling === */
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #bbaacc;
+}
+
+/* === "Need Help?" Link Button === */
+.btn-link {
+  color: #6a4ba7;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* === Informational Alert === */
+.alert-info {
+  background-color: #ede9f6;
+  color: #4c357c;
+  border: 1px solid #d3c1ec;
+}
+
+/* === Modal Styling (For use inside cart or elsewhere) === */
+.modal-content {
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #f9f8fb;
+}
+
+.modal-title {
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: #555;
+}

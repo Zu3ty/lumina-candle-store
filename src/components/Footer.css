@@ -1,91 +1,303 @@
-/* Footer.css */
+/* ====================
+   Base Footer Styles
+   ==================== */
 
+/* Main footer container styles */
 .footer {
-  background-color: #34273d; /* Deep purple background */
-  color: #c0c0c0; /* Silver text */
-  padding: 30px 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
-  text-align: center;
+  background-color: #121212; /* Dark background for mood and elegance */
+  color: #ddd; /* Light text for contrast */
+  padding: 40px 20px 20px; /* Spacing inside footer */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Clean readable font */
+  user-select: none; /* Prevents text selection for UI polish */
 }
 
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
+/* Container to align content and control width */
+.footer-container {
+  display: flex; /* Flex layout for horizontal alignment */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between; /* Even spacing between items */
+  max-width: 1100px; /* Max width to limit stretch */
+  margin: 0 auto 30px; /* Center container with bottom margin */
+  gap: 30px; /* Gap between flex items */
 }
 
-.payment-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
+/* ====================
+   Sections inside Footer
+   ==================== */
+
+/* General styling for each footer section */
+.footer-section {
+  flex: 1 1 250px; /* Flexible grow/shrink with min base width */
+  min-width: 230px; /* Prevent sections from becoming too narrow */
 }
 
-.payment-icons img {
-  height: 30px;
-  width: auto;
-  filter: brightness(0) invert(1); /* White logos for contrast */
-  transition: filter 0.3s ease;
+/* --- Brand Section --- */
+
+/* Brand name styling */
+.brand-name {
+  color: #bb86fc; /* Brand color - purple */
+  font-weight: 700; /* Bold for emphasis */
+  font-size: 1.8rem; /* Large text */
+  margin-bottom: 10px; /* Space below brand name */
 }
 
-.payment-icons img:hover {
-  filter: brightness(0.7) invert(1); /* Slightly dim on hover */
-  cursor: pointer;
+/* Brand description text */
+.brand-description {
+  color: #aaa; /* Medium light gray */
+  line-height: 1.5; /* Comfortable reading line height */
+  font-size: 0.95rem; /* Slightly smaller font */
 }
 
-.footer-credits,
-.footer-link-to-original,
-.footer-copy {
-  margin: 12px 0;
-  color: #c0c0c0; /* Silver color */
+/* --- Quick Links Section --- */
+
+/* Heading styles for links and newsletter */
+.links h5,
+.newsletter h5 {
+  color: #bb86fc; /* Purple heading color */
+  margin-bottom: 12px; /* Spacing below headings */
+  font-weight: 600; /* Semi-bold */
+  font-size: 1.1rem; /* Slightly larger font */
 }
 
-.footer-credits a,
-.footer-link-to-original a {
-  color: #d8bfd8; /* Thistle (light purple) for links */
-  text-decoration: none;
+/* Remove bullet points and padding from list */
+.links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Spacing between list items */
+.links li {
+  margin-bottom: 8px;
+}
+
+/* Style individual links */
+.footer-link {
+  color: #ccc; /* Light gray text */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Normal size */
+  transition: color 0.25s ease; /* Smooth color transition */
+}
+
+/* Hover/focus state for links */
+.footer-link:hover,
+.footer-link:focus {
+  color: #bb86fc; /* Brand purple highlight */
+  outline: none; /* Remove default outline */
+  text-decoration: underline; /* Underline for clarity */
+}
+
+/* --- Newsletter Section --- */
+
+/* Paragraph text under newsletter heading */
+.newsletter p {
+  font-size: 0.95rem;
+  color: #ccc; /* Light gray */
+  margin-bottom: 12px;
+}
+
+/* Newsletter form layout */
+.newsletter-form {
+  display: flex; /* Horizontal layout */
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 16px; /* Spacing below form */
+}
+
+/* Email input field styling */
+.newsletter-input {
+  flex-grow: 1; /* Take up remaining space */
+  padding: 10px 12px; /* Inner padding */
+  border-radius: 4px; /* Rounded corners */
+  border: none; /* No border */
+  font-size: 1rem; /* Normal font size */
+  outline: none; /* Remove default outline */
+  background-color: #222; /* Dark input background */
+  color: #eee; /* Light text */
+  transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+/* Placeholder text style */
+.newsletter-input::placeholder {
+  color: #777; /* Medium gray */
+}
+
+/* Focus state for input */
+.newsletter-input:focus {
+  background-color: #2a2a2a; /* Slightly lighter bg */
+  box-shadow: 0 0 5px #bb86fcaa; /* Purple glow */
+}
+
+/* Subscribe button style */
+.btn-subscribe {
+  background-color: #bb86fc; /* Brand purple */
+  border: none;
+  color: #121212; /* Dark text */
   font-weight: 600;
-  transition: color 0.3s ease;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.footer-credits a:hover,
-.footer-link-to-original a:hover {
-  color: #9370db; /* Medium purple on hover */
-  text-decoration: underline;
+/* Hover/focus for subscribe button */
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+  background-color: #a673f9; /* Slightly darker purple */
+  outline: none;
+  box-shadow: 0 0 8px #bb86fcaa; /* Glow effect */
 }
 
+/* --- Social Icons --- */
+
+/* Container for social icons */
 .social-icons {
-  margin: 20px 0;
+  display: flex;
+  gap: 20px; /* Spacing between icons */
+  font-size: 1.6rem; /* Icon size */
 }
 
+/* Individual social link */
 .social-link {
-  font-size: 24px;
-  margin: 0 12px;
-  color: #d8bfd8; /* Light purple */
-  text-decoration: none;
-  transition: transform 0.2s ease, color 0.3s ease;
+  color: #ccc; /* Light gray */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color & scale */
 }
 
+/* Hover/focus effects on social icons */
 .social-link:hover,
 .social-link:focus {
-  color: #9370db; /* Medium purple on hover */
-  transform: scale(1.2);
+  color: #bb86fc; /* Purple highlight */
+  transform: scale(1.2); /* Slight enlargement */
   outline: none;
 }
 
-/* Responsive tweaks */
-@media (max-width: 480px) {
-  .payment-icons {
-    gap: 10px;
+/* --- Footer Bottom Section --- */
+
+/* Bottom bar container */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #2a2a2a; /* Subtle top border */
+  padding-top: 18px;
+  color: #888; /* Muted gray text */
+  font-size: 0.85rem;
+  display: flex; /* Flex for layout */
+  flex-wrap: wrap; /* Wrap on small screens */
+  justify-content: center; /* Center content horizontally */
+  gap: 15px; /* Space between items */
+  align-items: center; /* Vertically center items */
+}
+
+/* Paragraph spacing in footer bottom */
+.footer-bottom p {
+  margin: 0; /* Remove default margin */
+}
+
+/* --- GitHub Link Styling --- */
+
+.github-link {
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 6px; /* Space between icon and text */
+  color: #ccc; /* Light gray */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease;
+}
+
+/* Hover/focus on GitHub link */
+.github-link:hover,
+.github-link:focus {
+  color: #d0afff; /* Light purple */
+  outline: none;
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive Breakpoints
+   ========================= */
+
+/* Large desktops: wider layout and font sizes */
+@media (min-width: 1200px) {
+  .footer-container {
+    max-width: 1200px;
+    gap: 50px;
   }
 
-  .payment-icons img {
-    height: 24px;
+  .footer-section {
+    min-width: 280px;
   }
 
-  .social-link {
-    font-size: 20px;
-    margin: 0 8px;
+  .brand-name {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets and medium screens: centered and narrower layout */
+@media (max-width: 991px) and (min-width: 769px) {
+  .footer-container {
+    max-width: 720px;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .footer-section {
+    min-width: 300px;
+  }
+}
+
+/* Small tablets and large phones: stack sections vertically, full width */
+@media (max-width: 768px) and (min-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    max-width: 90%;
+    gap: 30px;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  /* Stack newsletter form elements vertically */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  /* Subscribe button takes full width */
+  .btn-subscribe {
+    width: 100%;
+  }
+}
+
+/* Mobile phones: vertical layout, adjusted padding and centered icons */
+@media (max-width: 479px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  /* More gap in newsletter form */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Full width subscribe button */
+  .btn-subscribe {
+    width: 100%;
+  }
+
+  /* Center social icons */
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Stack footer bottom content vertically with small gap */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
   }
 }

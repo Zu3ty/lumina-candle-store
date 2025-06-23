@@ -1,151 +1,244 @@
-/* StorePage.css */
-
-.store-container {
-  max-width: 1400px;
-  margin: 0 auto;
+/* === Layout === */
+/* Container for the whole store page; uses flexbox for layout and wraps items on smaller widths */
+.store-page-container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 2rem;
-  background-color: #f2f2f2; /* light silver background */
+  gap: 2rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #2e2e2e;
+  color: #333;
+  max-width: 2000px;
+  margin: 0 auto; /* centers the layout horizontally */
 }
 
-.toast {
-  background-color: #6a0dad; /* deep purple */
-  color: white;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
-  text-align: center;
-  animation: fadeInOut 2s ease-in-out;
+/* === Main Content Section === */
+/* Main content area that takes up most space and is flexible */
+.store-main {
+  flex: 3 1 600px; /* flex-grow:3, flex-shrink:1, flex-basis:600px */
+  width: 100%;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
-
-.category-section {
-  margin-bottom: 3rem;
-}
-
-.category-title {
+/* Main heading styles */
+.store-main h1 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #444444;
-  border-left: 4px solid #a77bd4;
-  padding-left: 1rem;
 }
 
+/* === Product Grid === */
+/* Grid container for products with responsive auto-fill and gap */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
   gap: 2rem;
 }
 
+/* === Individual Product Card === */
+/* Styling for each product card including background, padding, border radius, and shadow */
 .product-card {
-  background-color: white;
+  background-color: rgb(250, 250, 250);
+  padding: 1.8rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.1); /* purple shadow */
-  padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative; /* allows positioning badges and buttons */
+  transition: transform 0.2s; /* smooth hover animation */
+  max-width: 500px;
+  margin: 0 auto; /* centers card in grid column */
 }
 
+/* Hover effect to slightly lift the card */
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(106, 13, 173, 0.2);
+  transform: translateY(-8px);
 }
 
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* Image inside the product card; fixed height and rounded corners */
+.product-image {
+  max-width: 400px;
+  height: 350px;
+  object-fit: cover; /* crop and scale image */
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.product-name {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0.5rem 0;
-  color: #2e2e2e;
+/* === Typography inside Product Card === */
+/* Product title */
+.product-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
 }
 
-.product-price {
+/* Product description text */
+.product-description {
   font-size: 1rem;
-  color: #6a0dad;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+/* Price styled boldly and with distinctive color */
+.product-price {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #ae3027 !important; /* strong red color */
+  margin-bottom: 0.4rem;
+}
+
+/* Stock availability text */
+.product-stock {
+  font-size: 0.9rem;
+  color: #777;
   margin-bottom: 0.5rem;
 }
 
-.stock-status {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.stock-status.in-stock {
-  color: #6a0dad;
-}
-
-.stock-status.limited-stock {
-  color: #a77bd4;
-}
-
-.stock-status.out-of-stock {
-  color: #af1313;
-  text-decoration: line-through;
-}
-
-.wishlist-button {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: #c0c0c0;
-  cursor: pointer;
-  margin-right: 1rem;
-  transition: color 0.3s ease;
-}
-
-.wishlist-button.active {
-  color: #d31b1b;
-}
-
-.add-to-cart-btn {
-  padding: 0.6rem 1.2rem;
-  background-color: #6a0dad;
-  color: white;
-  border: none;
+/* === Buttons === */
+/* Common styles for add to cart and wishlist buttons */
+.add-to-cart-btn,
+.wishlist-btn {
+  margin: 0.3rem 0.2rem;
+  padding: 0.5rem 2rem;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  font-size: 1rem;
 }
 
-.add-to-cart-btn:hover:not(:disabled) {
-  background-color: #a77bd4;
+/* Add to Cart button specific styles */
+.add-to-cart-btn {
+  background-color: #cc2e6b;
+  color: white;
 }
 
-.add-to-cart-btn:disabled {
+/* Disabled state styling for Add to Cart button */
+.add-to-cart-btn:disabled,
+.add-to-cart-btn[aria-disabled="true"] {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.average-rating {
-  margin-top: 0.8rem;
-  font-size: 1.2rem;
-  color: #ffd700; /* gold stars */
-  letter-spacing: 2px;
+/* Wishlist button styles - no background, larger font for heart icon */
+.wishlist-btn {
+  background: none;
+  font-size: 2rem;
+  color: #aaa;
+}
+
+/* Active state for wishlist button - changes color to red */
+.wishlist-btn.active {
+  color: #e74c3c;
+}
+
+/* === Star Rating === */
+/* Container for star ratings */
+.star-rating {
+  margin: 0.3rem 0;
+}
+
+/* Default star color (gray) */
+.star {
+  color: #ddd;
+  font-size: 2rem;
+}
+
+/* Filled star color (gold) */
+.star.filled {
+  color: #f1c40f;
+}
+
+/* === Hot Badge === */
+/* Positioned badge on product card for "hot" items */
+.hot-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background-color: #e74c3c; /* red */
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* === Responsive Design === */
+/* Layout changes for tablets and smaller screens */
+@media (max-width: 1024px) {
+  /* Stack container vertically */
+  .store-page-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar styling when stacked */
+  .sidebar {
+    width: 100%;
+    order: -1; /* move sidebar above main content */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    padding: 5rem;
+    box-shadow: black;
+    background: rgb(243, 243, 243);
+  }
+
+  /* Hide sidebar heading to save space */
+  .sidebar h3 {
+    display: none;
+  }
+
+  /* Category list becomes horizontal flex */
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Individual category list items */
+  .category-list li {
+    flex: 0 0 auto;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Main heading smaller and centered */
+  .store-main h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+/* Layout changes for small mobile screens */
+@media (max-width: 600px) {
+  /* Product card padding and width adjusts to fit smaller screens */
+  .product-card {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  /* Product image height reduced */
+  .product-image {
+    height: 100px;
+  }
+
+  /* Buttons smaller for mobile */
+  .add-to-cart-btn,
+  .wishlist-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Main heading smaller and centered */
+  .store-main h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Sidebar heading size increases for better readability */
+  .sidebar h3 {
+    font-size: 2rem;
+  }
 }
