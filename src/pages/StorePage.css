@@ -1,5 +1,4 @@
 /* === Layout === */
-/* Container for the whole store page; uses flexbox for layout and wraps items on smaller widths */
 .store-page-container {
   display: flex;
   flex-wrap: wrap;
@@ -8,81 +7,70 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   max-width: 2000px;
-  margin: 0 auto; /* centers the layout horizontally */
+  margin: 0 auto;
 }
 
-/* === Main Content Section === */
-/* Main content area that takes up most space and is flexible */
+/* === Main Section === */
 .store-main {
-  flex: 3 1 600px; /* flex-grow:3, flex-shrink:1, flex-basis:600px */
+  flex: 3 1 600px;
   width: 100%;
 }
 
-/* Main heading styles */
 .store-main h1 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
 /* === Product Grid === */
-/* Grid container for products with responsive auto-fill and gap */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-/* === Individual Product Card === */
-/* Styling for each product card including background, padding, border radius, and shadow */
+/* === Product Card === */
 .product-card {
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
   padding: 1.8rem;
   border-radius: 12px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
   text-align: center;
-  position: relative; /* allows positioning badges and buttons */
-  transition: transform 0.2s; /* smooth hover animation */
-  max-width: 500px;
-  margin: 0 auto; /* centers card in grid column */
+  position: relative;
+  transition: transform 0.2s;
+  margin: 0 auto;
 }
 
-/* Hover effect to slightly lift the card */
 .product-card:hover {
   transform: translateY(-8px);
 }
 
-/* Image inside the product card; fixed height and rounded corners */
 .product-image {
-  max-width: 400px;
+  width: 100%;
   height: 350px;
-  object-fit: cover; /* crop and scale image */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-/* === Typography inside Product Card === */
-/* Product title */
+/* === Product Details === */
 .product-card h4 {
   font-size: 1.3rem;
   margin-bottom: 0.4rem;
 }
 
-/* Product description text */
 .product-description {
   font-size: 1rem;
   color: #555;
   margin-bottom: 0.6rem;
 }
 
-/* Price styled boldly and with distinctive color */
 .product-price {
   font-weight: bold;
   font-size: 1.7rem;
-  color: #ae3027 !important; /* strong red color */
+  color: #ae3027;
   margin-bottom: 0.4rem;
 }
 
-/* Stock availability text */
 .product-stock {
   font-size: 0.9rem;
   color: #777;
@@ -90,7 +78,6 @@
 }
 
 /* === Buttons === */
-/* Common styles for add to cart and wishlist buttons */
 .add-to-cart-btn,
 .wishlist-btn {
   margin: 0.3rem 0.2rem;
@@ -98,59 +85,51 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
   font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-/* Add to Cart button specific styles */
 .add-to-cart-btn {
   background-color: #cc2e6b;
   color: white;
 }
 
-/* Disabled state styling for Add to Cart button */
 .add-to-cart-btn:disabled,
 .add-to-cart-btn[aria-disabled="true"] {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-/* Wishlist button styles - no background, larger font for heart icon */
 .wishlist-btn {
   background: none;
   font-size: 2rem;
   color: #aaa;
 }
 
-/* Active state for wishlist button - changes color to red */
 .wishlist-btn.active {
   color: #e74c3c;
 }
 
-/* === Star Rating === */
-/* Container for star ratings */
+/* === Rating === */
 .star-rating {
   margin: 0.3rem 0;
 }
 
-/* Default star color (gray) */
 .star {
   color: #ddd;
   font-size: 2rem;
 }
 
-/* Filled star color (gold) */
 .star.filled {
   color: #f1c40f;
 }
 
-/* === Hot Badge === */
-/* Positioned badge on product card for "hot" items */
+/* === Badges === */
 .hot-badge {
   position: absolute;
   top: 0.8rem;
   left: 0.8rem;
-  background-color: #e74c3c; /* red */
+  background-color: #e74c3c;
   color: white;
   font-size: 0.7rem;
   padding: 0.3rem 0.5rem;
@@ -158,87 +137,88 @@
   font-weight: bold;
 }
 
-/* === Responsive Design === */
-/* Layout changes for tablets and smaller screens */
+/* === Responsive Sidebar (Tablet) === */
 @media (max-width: 1024px) {
-  /* Stack container vertically */
   .store-page-container {
     flex-direction: column;
   }
 
-  /* Sidebar styling when stacked */
   .sidebar {
     width: 100%;
-    order: -1; /* move sidebar above main content */
+    order: -1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.9rem;
-    padding: 5rem;
-    box-shadow: black;
-    background: rgb(243, 243, 243);
+    gap: 1rem;
+    padding: 2rem;
+    background: #f3f3f3;
+    border-radius: 8px;
   }
 
-  /* Hide sidebar heading to save space */
   .sidebar h3 {
     display: none;
   }
 
-  /* Category list becomes horizontal flex */
   .category-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 0.5rem;
     width: 100%;
-    height: 10px;
-    padding: 0;
-    margin: 0;
   }
 
-  /* Individual category list items */
   .category-list li {
-    flex: 0 0 auto;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
 
-  /* Main heading smaller and centered */
+  .category-list li:hover {
+    background-color: #f7f7f7;
+  }
+
   .store-main h1 {
     font-size: 1.8rem;
     text-align: center;
   }
 }
 
-/* Layout changes for small mobile screens */
+/* === Mobile Styles === */
 @media (max-width: 600px) {
-  /* Product card padding and width adjusts to fit smaller screens */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
   .product-card {
     padding: 1rem;
-    max-width: 100%;
   }
 
-  /* Product image height reduced */
   .product-image {
-    height: 100px;
+    height: 200px;
   }
 
-  /* Buttons smaller for mobile */
   .add-to-cart-btn,
   .wishlist-btn {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 
-  /* Main heading smaller and centered */
   .store-main h1 {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  /* Sidebar heading size increases for better readability */
   .sidebar h3 {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .hot-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
   }
 }

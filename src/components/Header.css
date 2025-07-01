@@ -1,101 +1,69 @@
 /* ===== HEADER CONTAINER ===== */
 .header {
   background-color: #ececec;
-  padding: 20px 60px;
+  padding: 20px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 0 40px;
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
-  transition: background-color 0.3s ease;
 }
 
 /* ===== LOGO ===== */
-.logo {
+.logo-link img {
   height: 60px;
+  width: auto;
   cursor: pointer;
-  user-select: none;
-  color: #464646;
-  font-size: 44px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
   transition: transform 0.3s ease;
 }
-.logo:hover,
-.logo:focus {
+
+.logo-link img:hover {
   transform: scale(1.05);
-  outline: none;
 }
 
-/* ===== NAV LINKS ===== */
+/* ===== NAV ICONS WRAPPER ===== */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   list-style: none;
-  margin: 0;
   padding: 0;
-  flex-wrap: nowrap;
-}
-.nav-links li {
-  margin: 0 10px;
+  margin: 0;
 }
 
-/* ===== NAV ICONS ===== */
+/* ===== EACH ICON ===== */
 .nav-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
   cursor: pointer;
-  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
-/* ===== ICON BUTTON STYLE ===== */
+/* ===== ICON STYLE ===== */
 .icon-btn {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #333;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.25s ease;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
+
 .icon-btn:hover,
 .icon-btn:focus {
   transform: scale(1.1);
-  color: #4a33b1 !important; /* Brand accent */
+  color: #6a4fcc;
   outline: none;
 }
 
-/* ===== CART BADGE ===== */
-.cart-badge {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background-color: #6a4fcc;
-  color: white;
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 12px;
-  font-weight: 700;
-  box-shadow: 0 0 5px rgba(106, 79, 204, 0.5);
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s ease;
-}
-
-/* ===== WISHLIST BADGE ===== */
+/* ===== BADGES (CART & WISHLIST) ===== */
+.cart-badge,
 .wishlist-badge {
   position: absolute;
   top: -6px;
@@ -104,101 +72,79 @@
   color: white;
   font-size: 0.75rem;
   padding: 2px 6px;
-  border-radius: 12px;
+  border-radius: 50px;
   font-weight: 700;
   box-shadow: 0 0 5px rgba(106, 79, 204, 0.5);
-  user-select: none;
   pointer-events: none;
-  transition: transform 0.3s ease;
 }
 
 /* ===== WELCOME USER ===== */
 .welcome-user {
+  font-size: 1rem;
   font-weight: 600;
-  color: #333;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  white-space: nowrap;
+  gap: 8px;
+  color: #444;
 }
 
 /* ===== USERNAME STYLE ===== */
 .username {
-  color: #6a4fcc; /* Purple accent */
-  font-weight: 700;
-  font-size: 1.2rem;
-  padding: 2px 6px;
-  border-radius: 4px;
+  color: #6a4fcc;
   background-color: #e5def8;
-  box-shadow: 0 0 5px rgba(106, 79, 204, 0.3);
-  transition: background-color 0.3s ease;
-  cursor: default;
-}
-.username:hover {
-  background-color: #d4c1fa;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /* ===== LOGOUT BUTTON ===== */
 .logout-btn {
   background: transparent;
   border: none;
-  color: rgb(59, 59, 59);
-  padding: 6px 12px;
-  border-radius: 4px;
+  color: #444;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
-/* ===== PRODUCT CARD PREVIEW (shared styling) ===== */
-.product-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.1);
-  padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.logout-btn:hover {
+  color: #6a4fcc;
 }
 
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 768px) {
   .header {
-    padding: 15px 30px;
+    padding: 15px 20px;
   }
-  .navbar {
-    padding: 0 20px;
-  }
-  .nav-links {
-    gap: 16px;
-  }
+
   .icon-btn {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
-  .welcome-user {
-    font-size: 1rem;
-    gap: 0.4rem;
-  }
+
   .username {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 2px 6px;
+  }
+
+  .cart-badge,
+  .wishlist-badge {
+    font-size: 0.65rem;
     padding: 1px 5px;
   }
-}
 
-@media (max-width: 480px) {
-  .header {
-    padding: 12px 16px;
-  }
   .welcome-user {
-    gap: 0.3rem;
+    gap: 6px;
+    font-size: 0.95rem;
   }
-  .welcome-user > :not(.username):not(.logout-btn) {
-    display: none;
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }

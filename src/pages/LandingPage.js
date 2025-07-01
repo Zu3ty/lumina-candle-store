@@ -209,8 +209,16 @@ function LandingPage() {
         <div className="about-text">
           <h3>The Story of Lumina</h3>
           <p>
-            Lumina began as a small passion project in 2010, with a dream to
-            bring beautiful, handcrafted candles into every home...
+            Lumina began as a heartfelt passion project in 2010, born from a
+            simple dream — to fill homes with warmth, comfort, and the gentle
+            glow of handcrafted candles. What started as a few hand-poured
+            creations in a small kitchen has since grown into a beloved brand,
+            known for its dedication to quality, sustainability, and beauty.
+            Each Lumina candle is thoughtfully made with premium ingredients and
+            inspired by everyday moments — from cozy evenings and joyful
+            celebrations to quiet mornings and fresh beginnings. Our mission has
+            always been to turn the ordinary into something extraordinary, one
+            flicker at a time.
           </p>
         </div>
 

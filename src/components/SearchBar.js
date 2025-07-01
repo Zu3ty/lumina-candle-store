@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css";
 
-// Define search categories for the dropdown
 const categories = [
   "All",
   "Bestsellers",
@@ -11,26 +10,21 @@ const categories = [
 ];
 
 const SearchBar = ({ onSearch, onCategoryChange }) => {
-  const [query, setQuery] = useState(""); // State for search input
-  const [category, setCategory] = useState("All"); // State for selected category
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("All");
 
-  // Handle input value change
   const handleChange = (e) => {
     const val = e.target.value;
     setQuery(val);
-    // Call parent onSearch if provided
     if (onSearch) onSearch(val, category);
   };
 
-  // Handle category dropdown change
   const handleCategoryChange = (e) => {
     const val = e.target.value;
     setCategory(val);
-    // Call parent onCategoryChange if provided
     if (onCategoryChange) onCategoryChange(val, query);
   };
 
-  // Clear search input and notify parent
   const clearInput = () => {
     setQuery("");
     if (onSearch) onSearch("", category);
@@ -39,7 +33,6 @@ const SearchBar = ({ onSearch, onCategoryChange }) => {
   return (
     <div className="search-bar-wrapper">
       <div className="search-bar-container">
-        {/* Category dropdown */}
         <select
           value={category}
           onChange={handleCategoryChange}
@@ -52,7 +45,6 @@ const SearchBar = ({ onSearch, onCategoryChange }) => {
           ))}
         </select>
 
-        {/* Search input with clear (×) button */}
         <div className="search-input-wrapper">
           <input
             type="search"
@@ -61,7 +53,6 @@ const SearchBar = ({ onSearch, onCategoryChange }) => {
             onChange={handleChange}
             className="search-input"
           />
-          {/* Show clear button only when query is not empty */}
           {query && (
             <button
               onClick={clearInput}
@@ -73,7 +64,6 @@ const SearchBar = ({ onSearch, onCategoryChange }) => {
           )}
         </div>
 
-        {/* Search button with search icon */}
         <button className="search-icon-button" aria-label="Search">
           <FaSearch />
         </button>

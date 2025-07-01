@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Lumina Candle Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Welcome to the **Lumina Candle Store** React web application — a fictional online store designed to showcase candles with a beautiful, intuitive user interface built with React. This project is part of a React app capstone assignment, demonstrating practical skills in React, Redux, and modern web development practices.
 
-In the project directory, you can run:
+The application allows users to browse candle products, register and log in, add items to a cart, select shipping options, and get help about shipments — all wrapped in an attractive and responsive UI.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- User registration with input validation (first name, surname, username, email, password)
+- User login and session display in the header
+- Navigation menu present on all pages
+- Landing page, store/product page, and cart page components
+- Product listing dynamically rendered with unique keys using `.map()`
+- Shopping cart state management using Redux
+- Add/remove items from cart with live total cost updates
+- Shipping method selection
+- Help/info about shipping options
+- Responsive design with React-Bootstrap and custom CSS
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To install and run Lumina Candle Store locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/yourusername/lumina-candle-store.git
+   cd lumina-candle-store
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
 
-### `npm run eject`
+2. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Open your browser and visit http://localhost:3000 to see the app running.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- /src/components — React components for pages, header, product cards, cart, etc.
+- /src/redux — Redux setup for global state management (actions, reducers, store)
+- /src/styles — Custom CSS and Bootstrap styling
+- /public — Static assets and HTML template
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Register with your details on the Register page.
+- Log in with your username; your name will display in the header.
+- Browse candles on the Store page.
+- Add candles to your cart.
+- View and modify your cart on the Cart page.
+- Select a shipping method.
+- Click "Help" to get information about shipping options.
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React
+- Redux for state management
+- React-Bootstrap for UI components
+- JavaScript
+- HTML5 & CSS
 
-### Making a Progressive Web App
+## Version Control
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project uses Git for version control to manage changes efficiently, collaborate easily, and maintain a history of all modifications.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---

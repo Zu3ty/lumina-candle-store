@@ -173,7 +173,7 @@
 .about-text {
   flex: 1 1 400px;
   color: #2f2f2f;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   padding-right: 1.5rem;
 }
@@ -336,4 +336,51 @@
   cursor: pointer;
   font-family: "Arial", sans-serif;
   transition: background-color 0.3s ease;
+}
+
+/* === Media Queries === */
+@media (max-width: 768px) {
+  .landing-product-card {
+    max-width: 250px;
+  }
+
+  .landing-product-card img {
+    height: 250px;
+  }
+
+  .newsletter-section {
+    padding: 40px 10px;
+  }
+
+  .newsletter-box {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .about-text {
+    padding-right: 0;
+  }
+
+  .fade-slideshow {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-left h3 {
+    font-size: 1.4rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    font-size: 0.9rem;
+  }
 }
