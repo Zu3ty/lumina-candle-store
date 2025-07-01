@@ -70,7 +70,7 @@ To install and run Lumina Candle Store locally, follow these steps:
 - Redux for state management
 - React-Bootstrap for UI components
 - JavaScript
-- HTML5 & CSS
+- HTML & CSS
 
 ## Version Control
 
